@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="blending"
+	ProjectGUID="{AE66FBEF-BBFC-466B-A2D6-A3191B42C180}"
+	Keyword="Win32Proj">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="Debug"
+			IntermediateDirectory="Debug"
+			ConfigurationType="1"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="..\..\include;$(DXSDK_DIR)\include"
+				PreprocessorDefinitions="WIN32;_DEBUG;_CONSOLE"
+				MinimalRebuild="TRUE"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="1"
+				UsePrecompiledHeader="0"
+				WarningLevel="4"
+				Detect64BitPortabilityProblems="TRUE"
+				DebugInformationFormat="4"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="granny2.lib d3d9.lib"
+				OutputFile="$(OutDir)/blending.exe"
+				LinkIncremental="2"
+				AdditionalLibraryDirectories="..\..\bin\win32;&quot;$(DXSDK_DIR)\lib\x86&quot;"
+				GenerateDebugInformation="TRUE"
+				ProgramDatabaseFile="$(OutDir)/blending.pdb"
+				SubSystem="2"
+				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="Release"
+			IntermediateDirectory="Release"
+			ConfigurationType="1"
+			CharacterSet="2">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalIncludeDirectories="..\..\include;$(DXSDK_DIR)\include"
+				PreprocessorDefinitions="WIN32;NDEBUG;_CONSOLE"
+				RuntimeLibrary="0"
+				UsePrecompiledHeader="0"
+				WarningLevel="4"
+				Detect64BitPortabilityProblems="TRUE"
+				DebugInformationFormat="3"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="granny2.lib d3d9.lib"
+				OutputFile="$(OutDir)/blending.exe"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="..\..\bin\win32;&quot;$(DXSDK_DIR)\lib\x86&quot;"
+				GenerateDebugInformation="TRUE"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				TargetMachine="1"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCWebDeploymentTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx"
+			UniqueIdentifier="{1E7CD97A-A6FD-42e5-BC10-1DF0094B8DFF}">
+			<File
+				RelativePath=".\blending.cpp">
+			</File>
+			<File
+				RelativePath=".\blending.h">
+			</File>
+			<File
+				RelativePath=".\blending_helpers.cpp">
+			</File>
+		</Filter>
+		<Filter
+			Name="Shaders"
+			Filter="">
+			<File
+				RelativePath=".\Shaders\Shaders.hlsl">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Building Skinned shader"
+						CommandLine="fxc /nologo /E SkinVSVertexFetch /D EntryPoint_SkinVSVertexFetch /Zi /Od /Tvs_2_0 /Fo&quot;media\SkinVSVertexFetch.xvu&quot; &quot;$(InputPath)&quot;"
+						Outputs="media\SkinVSVertexFetch.xvu"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Building Skinned shader"
+						CommandLine="fxc /nologo /E SkinVSVertexFetch /D EntryPoint_SkinVSVertexFetch /Zi /Od /Tvs_2_0 /Fo&quot;media\SkinVSVertexFetch.xvu&quot; &quot;$(InputPath)&quot;"
+						Outputs="media\SkinVSVertexFetch.xvu"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\Shaders\Shaders.hlsl">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Building Pixel shader..."
+						CommandLine="fxc /nologo /E PixShader /D EntryPoint_PixShader /Zi /Od /Tps_2_0 /Fo&quot;media\PixelShader.xpu&quot; &quot;$(InputPath)&quot;"
+						Outputs="media\PixelShader.xpu"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Building Pixel shader..."
+						CommandLine="fxc /nologo /E PixShader /D EntryPoint_PixShader /Zi /Od /Tps_2_0 /Fo&quot;media\PixelShader.xpu&quot; &quot;$(InputPath)&quot;"
+						Outputs="media\PixelShader.xpu"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\Shaders\Shaders.hlsl">
+				<FileConfiguration
+					Name="Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Building Skinned shader"
+						CommandLine="fxc /nologo /E RigidVS /D EntryPoint_RigidVS /Zi /Od /Tvs_2_0 /Fo&quot;media\RigidVS.xvu&quot; &quot;$(InputPath)&quot;"
+						Outputs="media\RigidVS.xvu"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						Description="Building Skinned shader"
+						CommandLine="fxc /nologo /E RigidVS /D EntryPoint_RigidVS /Zi /Od /Tvs_2_0 /Fo&quot;media\RigidVS.xvu&quot; &quot;$(InputPath)&quot;"
+						Outputs="media\RigidVS.xvu"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
